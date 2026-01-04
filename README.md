@@ -28,3 +28,6 @@ X|X|~
 In this example, the user placed an O at `1,1` and Whitney placed an X at `1,2`. When you get one of these outputs, make sure to write the X from Whitney on your grid.
 
 This will continue until eventually you either enter a tie or Whitney finds a way to win.
+
+## Comparison to human players
+Whitney is about as difficult at tic-tac-toe as a well-informed human might be. Worst-case, Whitney will make a move that causes a draw; it never loses unless there's a bug that I don't know about.
