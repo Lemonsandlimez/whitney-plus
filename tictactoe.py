@@ -40,7 +40,7 @@ def check_move(x, y, board=board):
         return False
 
 def cpu_move(user_x, user_y, board):
-    ez_moves = [[1,2], [0,1], [2,1], [0,2], [2,2], [1,1], [0,0], [1,0], [1,2], [1,0]]
+    ez_moves = [[2,2], [0,1], [2,1], [0,2], [2,2], [1,1], [0,0], [1,0], [1,2], [1,0]]
 
     for i in ez_moves:
         temp_board = copy.deepcopy(board)
@@ -63,8 +63,8 @@ def cpu_move(user_x, user_y, board):
         #print(board[user_x + 1][user_y])
         board[user_x + 1][user_y] = "X"
 
-    elif check_move(1, 2): # One down from center
-        board[2][1] = "X"
+    elif check_move(2, 2): # One down from center
+        board[2][2] = "X"
 
     elif check_move(0, 1): # One to the left of center
         board[1][0] = "X"
@@ -75,13 +75,10 @@ def cpu_move(user_x, user_y, board):
     elif check_move(0, 2): # Diagonal strategy 1
         board[2][0] = "X"
 
-    elif check_move(2,2): # Diagonal strategy 2
-        board[2][2] = "X"
-
-    elif check_move(1,1): # Diagonal strategy 3
+    elif check_move(1,1): # Diagonal strategy 2
         board[1][1] = "X"
 
-    elif check_move(0,0): # Diagonal strategy 4
+    elif check_move(0,0): # Diagonal strategy 3
         board[0][0] = "X"
 
     elif check_move(1, 0): # One up from center
