@@ -1,19 +1,21 @@
-# whitney
-Whitney is a reasonably-powerful tic-tac-toe engine that never loses (or so I hope). Ties are common.
+## PS: Whitney+ is still under development
 
-It always starts as X; support for starting as O might be added in the future.
+# whitney+
+
+*Whitney+* is a decent tic-tac-toe engine , with new implemented features.
+
 
 ## Usage
 When the engine starts, you'll see a screen like this:
 
 ~~~
-CPU is playing as X.
+Whitney+ iss playing as X.
 ~|~|~
-~|X|~
+~|?|~
 ~|~|~
 ~~~
 
-Go ahead and draw a 3x3 grid somewhere, with an X in the middle; for strategic reasons, this is always the first move that Whitney will make.
+Go ahead and draw a 3x3 grid somewhere, with an ? (? BEING A X OR A O) in the middle; for strategic reasons, this is always the first move that Whitney will make.
 
 When you're ready to take your turn, write it down on your grid, and type the coordinates into Whitney. X goes from left to right and Y goes up to down; X=1 is the leftmost cell and Y=1 is the uppermost cell.
 
