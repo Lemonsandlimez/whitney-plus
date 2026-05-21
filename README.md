@@ -16,13 +16,13 @@
 When the engine starts, you'll see a screen like this:
 
 ~~~
-Whitney+ iss playing as X.
+Whitney+ is playing as X.
 ~|~|~
 ~|?|~
 ~|~|~
 ~~~
 
-Go ahead and draw a 3x3 grid somewhere, with an X in the middle; for strategic reasons, this is always the first move that Whitney will make.
+Go ahead and draw a 3x3 grid somewhere, with an X in the middle. For strategic reasons, this is always the first move that Whitney will make.
 
 When you're ready to take your turn, write it down on your grid, and type the coordinates into Whitney. X goes from left to right and Y goes up to down; X=1 is the leftmost cell and Y=1 is the uppermost cell.
 
@@ -38,5 +38,6 @@ In this example, the user placed an O at `1,1` and Whitney placed an X at `1,2`.
 This will continue until eventually you either enter a tie or Whitney finds a way to win.
 
 ## Comparison to human players
-Whitney is about as difficult at tic-tac-toe as a well-informed human might be. Worst-case, Whitney will make a move that causes a draw; it never loses unless there's a bug that I don't know about.
+Whitney is about as difficult at tic-tac-toe as a well-informed human might be. Worst-case, Whitney will make a move that causes a draw, im not going to be confident and say it never loses, but its VERY unlikely.
 
+Go ahead and use **Cython** to make it portable
