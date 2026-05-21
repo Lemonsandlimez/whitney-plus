@@ -1,12 +1,14 @@
 import copy
 
+print("x <-> , y ^v")
 board = [["~", "~", "~"],
           ["~", "X", "~"],
           ["~", "~", "~"]]
 
 def print_board(board):
-    for i in board:
-        print("|".join(i))
+    print("  1 2 3")  # column numbers
+    for idx, row in enumerate(board, start=1):
+        print(idx, "|".join(row))
 
 def check_win(board, flip=True):
     winner = None
@@ -48,7 +50,7 @@ def cpu_move(user_x, user_y, board):
             temp_board[i[1]][i[0]] = "X"
 
             if check_win(temp_board) == "X":
-                #print("CPU won using preliminary win analysis.")
+                print("CPU won using preliminary win analysis.")
                 return temp_board
             else:
                 del temp_board
@@ -87,13 +89,14 @@ def cpu_move(user_x, user_y, board):
 
     elif check_move(1, 2): # The user is trying to force an easy draw. Maybe it was an accident?
         board[2][1] = "X"
-        print("CPU: Well played.")
+        print("Drawed. Good Job!")
 
     elif check_move(1,0): # OK, that didn't work. CPU is probably doomed, but pretend to be confident.
+        print("Oof.. uhh")
         board[0][1] = "X"
 
     else:
-        print("CPU draw. Consider letting the creators know so that they can improve the algorithm.")
+        print("Drawed. Good job!")
         return None
         
 
@@ -105,14 +108,20 @@ def check_tie(board):
             return False
     return True
         
-print("CPU is playing as X.")
+print("Whitney+ is playing as X.")
 
 print_board(board)
 running = True
 
 while running:
-    x = int(input("Placement X (higher is further right): ")) - 1
-    y = int(input("Placement Y (higher is further down): ")) - 1
+    data = input("Enter pos (x, y): ")
+    # Split by comma and clean up spaces
+    output = [item.strip() for item in data.split(',')]
+
+    # Convert to integer FIRST, then subtract the offset
+    x = int(output[0]) - 1
+    y = int(output[1]) - 1
+    
     if check_move(x, y):
         board[y][x] = "O"
 
