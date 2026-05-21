@@ -33,3 +33,4 @@ This will continue until eventually you either enter a tie or Whitney finds a wa
 
 ## Comparison to human players
 Whitney is about as difficult at tic-tac-toe as a well-informed human might be. Worst-case, Whitney will make a move that causes a draw; it never loses unless there's a bug that I don't know about.
+
