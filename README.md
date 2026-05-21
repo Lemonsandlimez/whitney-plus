@@ -1,5 +1,12 @@
 ## PS: Whitney+ is still under development
 
+
+### New Features:
+
+1) Cleaner output
+2) Better Bot messages
+3) Safer try/Except
+
 # whitney+
 
 *Whitney+* is a decent tic-tac-toe engine , with new implemented features.
@@ -15,12 +22,11 @@ Whitney+ iss playing as X.
 ~|~|~
 ~~~
 
-Go ahead and draw a 3x3 grid somewhere, with an ? (? BEING A X OR A O) in the middle; for strategic reasons, this is always the first move that Whitney will make.
+Go ahead and draw a 3x3 grid somewhere, with an X in the middle; for strategic reasons, this is always the first move that Whitney will make.
 
 When you're ready to take your turn, write it down on your grid, and type the coordinates into Whitney. X goes from left to right and Y goes up to down; X=1 is the leftmost cell and Y=1 is the uppermost cell.
 
-Whitney will take a short moment to choose a move, and then it will produce an output like this:
-
+Whitney will make a output like:
 ~~~
 O|~|~
 X|X|~
@@ -33,3 +39,4 @@ This will continue until eventually you either enter a tie or Whitney finds a wa
 
 ## Comparison to human players
 Whitney is about as difficult at tic-tac-toe as a well-informed human might be. Worst-case, Whitney will make a move that causes a draw; it never loses unless there's a bug that I don't know about.
+
