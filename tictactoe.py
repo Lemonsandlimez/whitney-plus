@@ -1,4 +1,9 @@
 import copy
+import os
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 print("x <-> , y ^v")
 board = [["~", "~", "~"],
@@ -114,43 +119,55 @@ print_board(board)
 running = True
 
 while running:
-    data = input("Enter pos (x, y): ")
-    # Split by comma and clean up spaces
-    output = [item.strip() for item in data.split(',')]
+    try:
+        data = input("Enter pos (x, y): ")
 
-    # Convert to integer FIRST, then subtract the offset
-    x = int(output[0]) - 1
-    y = int(output[1]) - 1
-    
-    if check_move(x, y):
-        board[y][x] = "O"
+        # Split by comma and clean up spaces
+        output = [item.strip() for item in data.split(',')]
+
+        # Convert to integer FIRST, then subtract the offset
+        x = int(output[0]) - 1
+        y = int(output[1]) - 1
+        
+        if check_move(x, y):
+            board[y][x] = "O"
+
+            if check_win(board):
+                print("Player", check_win(board), "won!")
+                running = False
+            clear()
+            print("CPU turn!")
+            next_move = cpu_move(y, x, board)
+            if next_move:
+                board = next_move
+                print_board(board)
+            else:
+                running = False
+                clear()
+                print_board(board)
+
+            
+        else:
+            print("Illegal move. Try again.")
+
+        #print(check_win(board))
+        #print_board(board)
+
+        
+        
 
         if check_win(board):
             print("Player", check_win(board), "won!")
             running = False
-        
-        print("CPU turn!")
-        next_move = cpu_move(y, x, board)
-        if next_move:
-            board = next_move
-            print_board(board)
-        else:
-            running = False
-            print_board(board)
 
-        
-    else:
-        print("Illegal move. Try again.")
+        elif check_tie(board):
+            print("Both players are tied.")
+            running == False
 
-    #print(check_win(board))
-    #print_board(board)
-
-    
-    
-
-    if check_win(board):
-        print("Player", check_win(board), "won!")
+    except KeyboardInterrupt:
         running = False
-    elif check_tie(board):
-        print("Both players are tied.")
-        running = False
+        print()
+        print("Bye Bye!")
+
+    except (ValueError, IndexError):
+        print("You used a invalid input, please do X, Y (with commas)")
