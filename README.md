@@ -1,6 +1,3 @@
-## PS: Whitney+ is still under development
-
-
 ### New Features:
 
 1) Cleaner output
